@@ -1,0 +1,3 @@
+minimal_news:
+    resource: '@MinimalNewsBundle/Controller'
+    type: annotation

@@ -1,0 +1,19 @@
+{
+    "name": "minimaloriginal/news-bundle",
+    "description" : "The news bundle for Minimal",
+    "type" : "symfony-bundle",
+    "keywords" : [
+        "news bundle"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.3.*",
+        "minimaloriginal/core-bundle": "dev-master"
+    },
+    "autoload": {
+        "psr-4": { "MinimalOriginal\\NewsBundle\\": "src/" }
+    }
+}

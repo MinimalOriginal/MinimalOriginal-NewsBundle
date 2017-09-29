@@ -69,6 +69,10 @@ class News implements EntityRoutedInterface
      */
     private $updated;
 
+    public function __construct(){
+      $this->setPublished(new \DateTime());
+    }
+
     public function __toString(){
       return $this->getTitle();
     }

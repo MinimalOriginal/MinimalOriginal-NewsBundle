@@ -1,0 +1,18 @@
+{% extends "MinimalCoreBundle::base.html.twig" %}
+{% block data %}
+  <h2>{{"Dernières actualités"|trans}}</h2>
+  {%- for news in data -%}
+    {% embed "MinimalCoreBundle:UI:item.html.twig" with {
+        object: news,
+        itemtype: "http://schema.org/News",
+        url: path('news_show',{slug: news.slug}),
+      } %}
+      {% block header %}{{object.title}}{% endblock header %}
+      {% block meta %}{{"Publié le %date%"|trans({'%date%': object.published|localizeddate('medium', 'short', app.request.locale)})}}{% endblock meta %}
+      {% block description %}{{object.content|truncate(200, true, "...")}}{% endblock description %}
+    {% endembed %}
+  {%- else -%}
+    {{"Aucun article trouvé"|trans}}
+  {%- endfor -%}
+  {% embed "MinimalCoreBundle:UI:pagination.html.twig" with {data: data, request: app.request} %}{% endembed %}
+{% endblock data %}

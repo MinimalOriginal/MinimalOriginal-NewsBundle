@@ -12,7 +12,7 @@ use MinimalOriginal\CoreBundle\Repository\QueryFilter;
 class NewsController extends Controller
 {
   /**
-   * @Route("/", name="news_list")
+   * @Route("/", name="minimal_news_list")
    *
    * @param QueryFilter $queryFilter
    *
@@ -32,7 +32,7 @@ class NewsController extends Controller
   }
 
   /**
-   * @Route("/{slug}", name="news_show")
+   * @Route("/{slug}", name="minimal_news_show")
    */
   public function showAction($slug)
   {

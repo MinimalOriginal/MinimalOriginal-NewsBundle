@@ -5,6 +5,7 @@ namespace MinimalOriginal\NewsBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
+use MinimalOriginal\CoreBundle\Annotation\Exposure;
 
 /**
  * News
@@ -26,6 +27,7 @@ class News implements EntityRoutedInterface
     /**
      * @var string
      *
+     * @Exposure(groups = {"manager"}, name = "Titre")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -34,7 +36,6 @@ class News implements EntityRoutedInterface
      * @var string
      *
      * @Gedmo\Slug(fields={"title"}, updatable=false, separator="-")
-     *
      * @ORM\Column(name="slug", type="string", length=255, unique=true)
      */
     private $slug;
@@ -49,6 +50,7 @@ class News implements EntityRoutedInterface
     /**
      * @var \DateTime
      *
+     * @Exposure(groups = {"manager"}, name = "Date de publication")
      * @ORM\Column(name="published", type="datetime")
      */
     private $published;
@@ -65,6 +67,7 @@ class News implements EntityRoutedInterface
      * @var \DateTime $updated
      *
      * @Gedmo\Timestampable(on="update")
+     * @Exposure(groups = {"manager"}, name = "Date de mise à jour")
      * @ORM\Column(type="datetime")
      */
     private $updated;

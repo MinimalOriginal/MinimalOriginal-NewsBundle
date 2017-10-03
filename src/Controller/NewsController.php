@@ -26,6 +26,9 @@ class NewsController extends Controller
 
     $data = $repository->findList();
 
+    // Définit les données SEO
+    $this->initSeo()->setDescription("Retrouvez l'ensemble de notre actualité.");
+
     return $this->render('MinimalNewsBundle:List:item.html.twig', array(
       'data' => $data,
     ));
@@ -41,8 +44,23 @@ class NewsController extends Controller
     if( null === $data ){
       throw new NotFoundHttpException("Cet article n'existe pas.");
     }
+
+    // Définit les données SEO
+    $this->initSeo()
+    ->addTitle($data->getTitle())
+    ->setDescription($data->getContent());
+
+
     return $this->render('MinimalNewsBundle:Show:show.html.twig', array(
       'data' => $data,
     ));
+  }
+
+  /**
+   * Initialise les données SEO
+   */
+  protected function initSeo(){
+    $seo = $this->container->get('minimal_seo');
+    return $seo->addTitle("Actualités");
   }
 }

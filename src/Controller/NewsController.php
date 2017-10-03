@@ -3,7 +3,7 @@
 namespace MinimalOriginal\NewsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use MinimalOriginal\CoreBundle\Routing\Annotation\Route;
 use MinimalOriginal\CoreBundle\Repository\QueryFilter;
 
 /**
@@ -12,7 +12,7 @@ use MinimalOriginal\CoreBundle\Repository\QueryFilter;
 class NewsController extends Controller
 {
   /**
-   * @Route("/", name="minimal_news_list")
+   * @Route("/", name="minimal_news_list", title="Liste de news")
    *
    * @param QueryFilter $queryFilter
    *

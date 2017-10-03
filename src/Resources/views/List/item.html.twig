@@ -5,7 +5,7 @@
     {% embed "MinimalCoreBundle:UI:item.html.twig" with {
         object: news,
         itemtype: "http://schema.org/News",
-        url: path('news_show',{slug: news.slug}),
+        url: path('minimal_news_show',{slug: news.slug}),
       } %}
       {% block header %}{{object.title}}{% endblock header %}
       {% block meta %}{{"Publié le %date%"|trans({'%date%': object.published|localizeddate('medium', 'short', app.request.locale)})}}{% endblock meta %}

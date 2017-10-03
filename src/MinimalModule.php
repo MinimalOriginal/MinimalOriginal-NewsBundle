@@ -51,7 +51,7 @@ class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
    * {@inheritdoc}
    */
   public function getShowRoute(){
-    return 'news_show';
+    return 'minimal_news_show';
   }
 
   /**
@@ -61,17 +61,4 @@ class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
     return array('slug' => $entity->getSlug());
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowController(){
-    return 'MinimalNewsBundle:News:show';
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowControllerParams(EntityRoutedInterface $entity){
-    return array('slug' => $entity->getSlug());
-  }
 }

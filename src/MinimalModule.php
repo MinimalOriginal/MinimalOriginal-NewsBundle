@@ -2,14 +2,14 @@
 
 namespace MinimalOriginal\NewsBundle;
 
-use MinimalOriginal\CoreBundle\Modules\ModuleInterface;
+use MinimalOriginal\CoreBundle\Modules\AbstractModule;
 
 use MinimalOriginal\NewsBundle\Form\NewsType;
 use MinimalOriginal\NewsBundle\Entity\News;
 
 use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
 
-class MinimalModule implements ModuleInterface{
+class MinimalModule extends AbstractModule{
 
   /**
    * {@inheritdoc}

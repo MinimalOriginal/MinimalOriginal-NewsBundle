@@ -2,36 +2,23 @@
 
 namespace MinimalOriginal\NewsBundle;
 
-use MinimalOriginal\CoreBundle\Modules\AbstractModule;
+use MinimalOriginal\CoreBundle\Modules\AbstractManageableModule;
 
 use MinimalOriginal\NewsBundle\Form\NewsType;
 use MinimalOriginal\NewsBundle\Entity\News;
 
-use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
-
-class MinimalModule extends AbstractModule{
+class MinimalModule extends AbstractManageableModule{
 
   /**
    * {@inheritdoc}
    */
-  public function getName(){
-    return 'news';
+  public function init(){
+    $this->informations->set('name', 'news');
+    $this->informations->set('title', 'Articles');
+    $this->informations->set('description', "Créez ou modifiez les articles de votre site.");
+    $this->informations->set('icon', "ion-ios-paper-outline");
+    return $this;
   }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getTitle(){
-    return "Articles";
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getDescription(){
-    return "Créez ou modifiez les articles de votre site.";
-  }
-
   /**
    * {@inheritdoc}
    */

@@ -1,4 +1,5 @@
 services:
   minimal_manager.module.news:
       class: MinimalOriginal\NewsBundle\MinimalModule
+      arguments: ['@doctrine.orm.entity_manager']
       tags: [minimal_manager.module]

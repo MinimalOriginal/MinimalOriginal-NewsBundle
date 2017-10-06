@@ -3,14 +3,13 @@
 namespace MinimalOriginal\NewsBundle;
 
 use MinimalOriginal\CoreBundle\Modules\ModuleInterface;
-use MinimalOriginal\CoreBundle\Modules\ModuleRoutedInterface;
 
 use MinimalOriginal\NewsBundle\Form\NewsType;
 use MinimalOriginal\NewsBundle\Entity\News;
 
 use MinimalOriginal\CoreBundle\Entity\EntityRoutedInterface;
 
-class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
+class MinimalModule implements ModuleInterface{
 
   /**
    * {@inheritdoc}
@@ -45,20 +44,6 @@ class MinimalModule implements ModuleInterface, ModuleRoutedInterface{
    */
   public function getFormTypeClass(){
     return NewsType::class;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowRoute(){
-    return 'minimal_news_show';
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getShowRouteParams(EntityRoutedInterface $entity){
-    return array('slug' => $entity->getSlug());
   }
 
 }

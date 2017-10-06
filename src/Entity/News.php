@@ -205,4 +205,14 @@ class News implements EntityRoutedInterface
     {
         return $this->updated;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+     public function getShowRoute(){
+       return array(
+         'route' => 'minimal_news_show',
+         'params' => array('slug' => $this->getSlug()),
+       );
+     }
 }

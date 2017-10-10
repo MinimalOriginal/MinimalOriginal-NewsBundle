@@ -11,7 +11,8 @@
     "require" : {
         "php": ">=5.5.9",
         "symfony/symfony": "3.3.*",
-        "minimaloriginal/core-bundle": "dev-master"
+        "minimaloriginal/core-bundle": "dev-master",
+        "minimaloriginal/image-bundle": "dev-master"
     },
     "autoload": {
         "psr-4": { "MinimalOriginal\\NewsBundle\\": "src/" }
